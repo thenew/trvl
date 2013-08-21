@@ -11,13 +11,27 @@ window.addEvent('domready', function(j) {
     var chicago = new google.maps.LatLng(41.850033, -87.6500523);
 
     var vancouver = new google.maps.LatLng(49.290504,-123.117655);
-    var victoria = new google.maps.LatLng(48.42373,-123.35449);
+    var richmond = new google.maps.LatLng(49.19168,-123.11442);
 
-    var waypts = [
-        // location:checkboxArray[i].value,
-        //   stopover:true
-        // brooklyn,chicago
+    var steps = [
+        vancouverBeaverLake = [49.30520,-123.13878],
+        tsawwassen = [49.00659,-123.13288],
+        victoria = [48.42373,-123.35449],
+        tofino = [49.15243,-125.90249],
+        nanaimo = [49.16664,-123.93497],
+        horseshoeBay = [49.37579,-123.27160],
+        whistler = [50.11632,-122.95736],
+        clearwater = [51.64102,-120.02728]
     ];
+
+
+    var waypts = [];
+    steps.each(function(el) {
+        waypts.push({
+            location: new google.maps.LatLng(el[0],el[1]),
+            stopover:false
+        });
+    });
 
     var MY_MAPTYPE_ID = 'custom_style';
 
@@ -27,7 +41,7 @@ window.addEvent('domready', function(j) {
         var featureOpts = [
             {
               stylers: [
-                { hue: '#BADA55' },
+                { hue: '#444' },
                 { visibility: 'simplified' },
                 { gamma: 0.5 },
                 { weight: 0.5 }
@@ -42,7 +56,7 @@ window.addEvent('domready', function(j) {
             {
               featureType: 'water',
               stylers: [
-                { color: '#BADA55' }
+                { color: '#000' }
               ]
             }
         ];
@@ -52,10 +66,12 @@ window.addEvent('domready', function(j) {
         var mapOptions = {
             zoom: 9,
             center: vancouver,
-            mapTypeControlOptions: {
-              mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
-            },
-            mapTypeId: MY_MAPTYPE_ID
+            disableDefaultUI: true,
+            // mapTypeControlOptions: {
+            //   mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
+            // },
+            // mapTypeId: MY_MAPTYPE_ID
+            mapTypeId: google.maps.MapTypeId.SATELLITE
         };
 
         map = new google.maps.Map(document.getElementById('map-canvas'),
@@ -67,7 +83,7 @@ window.addEvent('domready', function(j) {
 
         var request = {
             origin:vancouver,
-            destination:victoria,
+            destination:richmond,
             waypoints: waypts,
             optimizeWaypoints: true,
             travelMode: google.maps.DirectionsTravelMode.DRIVING
@@ -80,13 +96,13 @@ window.addEvent('domready', function(j) {
 
 
 
-        var styledMapOptions = {
-            name: 'Custom Style'
-        };
+        // var styledMapOptions = {
+        //     name: 'Custom Style'
+        // };
 
-        var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
+        // var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
 
-        map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
+        // map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
     }
 
     google.maps.event.addDomListener(window, 'load', initialize);
