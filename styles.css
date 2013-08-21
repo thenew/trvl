@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+body {
+    background-color: #efefef;
+    height: 100%;
+}
+
+.main {
+    position: relative;
+    min-height: 100%;
+}
+
+.map {
+    width: 80%;
+    min-width: 500px;
+    height: 80%;
+    min-height: 400px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: 2px solid #444;
+}
+
+.photos {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
