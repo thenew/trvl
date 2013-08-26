@@ -1,10 +1,30 @@
+var map;
+
 window.addEvent('domready', function(j) {
+
+    var geoCities = {
+        vancouver           : [49.290504,-123.117655],
+        vancouverBeaverLake : [49.30520,-123.13878],
+        tsawwassen          : [49.00659,-123.13288],
+        victoria            : [48.42373,-123.35449],
+        tofino              : [49.15243,-125.90249],
+        nanaimo             : [49.16664,-123.93497],
+        horseshoeBay        : [49.37579,-123.27160],
+        whistler            : [50.11632,-122.95736],
+        clearwater          : [51.64102,-120.02728],
+        jasper              : [52.882,-118.07880],
+        banff               : [51.17836,-115.57077],
+        calgary             : [51.04532,-114.05810],
+        revelstoke          : [50.99867,-118.19439],
+        kelowna             : [49.88795,-119.49601],
+        osoyoos             : [49.02947,-119.45171],
+        richmond            : [49.19168,-123.11442]
+    };
 
     // https://developers.google.com/maps/documentation/javascript/examples/
 
     var directionsDisplay;
     var directionsService = new google.maps.DirectionsService();
-    var map;
 
     // locations
     var vancouver = new google.maps.LatLng(49.290504,-123.117655);
@@ -81,6 +101,7 @@ window.addEvent('domready', function(j) {
             zoom: 9,
             center: vancouver,
             disableDefaultUI: true,
+            scrollwheel: false,
             // mapTypeControlOptions: {
             //   mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
             // },
@@ -94,7 +115,12 @@ window.addEvent('domready', function(j) {
 
         //Directions
         directionsDisplay = new google.maps.DirectionsRenderer();
+        directionsDisplay.suppressMarkers = true;
         directionsDisplay.setMap(map);
+        // directionsDisplay.markerOptions = {
+        //     icon: ''
+        // };
+
 
         var request = {
             origin:vancouver,
@@ -110,6 +136,7 @@ window.addEvent('domready', function(j) {
         });
 
         directionsDisplay2 = new google.maps.DirectionsRenderer();
+        directionsDisplay2.suppressMarkers = true;
         directionsDisplay2.setMap(map);
 
         var request2 = {
@@ -140,15 +167,57 @@ window.addEvent('domready', function(j) {
 
 
     // Actions
-    $('geo-list').getElements('a').addEvent('click', function(e) {
-        var geo = this.get('data-geo');
-        if(geo) {
-            e.preventDefault();
-            geo = geo.split(',');
-            console.log(geo);
-            var latLng = new google.maps.LatLng(geo[0],geo[1]);
+
+    // ShootOnSight each photos
+
+    $$('.photo').addEvent('click', function(e) {
+        var city = this.get('data-city');
+        if(city && geoCities.hasOwnProperty(city)) {
+            var latLng = new google.maps.LatLng(geoCities[city][0],geoCities[city][1]);
             map.panTo(latLng);
         }
     });
 
+
+    $$('.photo').each(function(photo) {
+        shootOnSight(photo, panMap);
+    });
+
+
+    function panMap() {
+        var city = this.get('data-city');
+        if(city && geoCities.hasOwnProperty(city)) {
+            var latLng = new google.maps.LatLng(geoCities[city][0],geoCities[city][1]);
+            map.panTo(latLng);
+        }
+    }
+
+
 });
+
+
+// functions
+/**
+  * Trigger anim when el appears in viewport
+  */
+
+function shootOnSight(el, callback) {
+    el.store('shot', false);
+    var sight = window.getScroll().y + window.getHeight();
+    var prey = el.getPosition().y + el.getHeight();
+    if(!el.retrieve('shot') && sight > prey) {
+        var callbackFn = callback.bind(el);
+        callbackFn();
+        el.store('shot', true);
+    } else {
+        $(window).addEvent('scroll',function(e){
+            sight = window.getScroll().y + window.getHeight();
+            prey = el.getPosition().y + el.getHeight();
+            if(!el.retrieve('shot') && sight > prey) {
+                var callbackFn = callback.bind(el);
+                callbackFn();
+                el.store('shot', true);
+            }
+        });
+    }
+}

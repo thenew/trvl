@@ -443,3 +443,13 @@ textarea,
     -o-transition: border 0.3s ease,background 0.3s ease,color 0.3s ease;
     transition: border 0.3s ease,background 0.3s ease,color 0.3s ease;
 }
+
+​.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after { clear: both; }
+
+.cf { *zoom: 1; }
