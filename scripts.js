@@ -100,7 +100,7 @@ window.addEvent('domready', function(j) {
 
 
         var mapOptions = {
-            zoom: 9,
+            zoom: 8,
             center: vancouver,
             disableDefaultUI: true,
             scrollwheel: false,
@@ -124,7 +124,7 @@ window.addEvent('domready', function(j) {
         // };
 
 
-        var request = {
+/*        var request = {
             origin:vancouver,
             destination:jasper,
             waypoints: waypts,
@@ -152,7 +152,7 @@ window.addEvent('domready', function(j) {
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsDisplay2.setDirections(response);
             }
-        });
+        });*/
 
 
 

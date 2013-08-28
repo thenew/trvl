@@ -10,21 +10,25 @@
 
     <div class="main">
         <div class="map-container">
-            <div id="map-canvas" class="map"></div>
+            <div id="map" class="map"></div>
         </div>
 
         <div class="photos">
             <ul id="geo-list" class="list photos-list">
                 <li class="item">
-                    <img class="photo" src="img/vancouver_01.jpg" data-city="vancouver" />
+                    <img class="photo" src="img/vancouver_01.jpg" id="vancouver" />
                     <div class="cf metas"><div class="caption">Vancouver, downtown</div></div>
                 </li>
                 <li class="item">
-                    <img class="photo" src="img/victoria_01.jpg" data-city="victoria" />
+                    <img class="photo" src="img/victoria_01.jpg" id="victoria" />
                     <div class="cf metas"><div class="caption">Victoria</div></div>
                 </li>
                 <li class="item">
-                    <img class="photo" src="img/tofino_01.jpg" data-city="tofino" />
+                    <img class="photo" src="img/tofino_01.jpg" id="tofino" />
+                    <div class="cf metas"><div class="caption">Tofino, hydravion</div></div>
+                </li>
+                <li class="item">
+                    <img class="photo" src="img/tofino_01.jpg" id="calgary" />
                     <div class="cf metas"><div class="caption">Tofino, hydravion</div></div>
                 </li>
 
@@ -41,8 +45,108 @@
         </div>
     </div>
 
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false&amp;language=fr"></script>
+    <script src='http://underscorejs.org/underscore-min.js'></script>
+    <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js'></script>
+    <link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' rel='stylesheet' />
     <script src="mootools-1.4.5.js"></script>
-    <script src="scripts.js"></script>
+    <script type="text/javascript">
+
+        var geojson = [
+            { "geometry": { "type": "Point", "coordinates": [-123.117655, 49.290504] },
+            "properties": { "id": "vancouver", "zoom": 8 } },
+            { "geometry": { "type": "Point", "coordinates": [-123.13878, 49.30520] },
+            "properties": { "id": "vancouverBeaverLake" } },
+            { "geometry": { "type": "Point", "coordinates": [-123.13288, 49.00659] },
+            "properties": { "id": "tsawwassen" } },
+            { "geometry": { "type": "Point", "coordinates": [-123.35449, 48.42373] },
+            "properties": { "id": "victoria" } },
+            { "geometry": { "type": "Point", "coordinates": [-125.90249, 49.15243] },
+            "properties": { "id": "tofino" } },
+            { "geometry": { "type": "Point", "coordinates": [-123.93497, 49.16664] },
+            "properties": { "id": "nanaimo" } },
+            { "geometry": { "type": "Point", "coordinates": [-123.27160, 49.37579] },
+            "properties": { "id": "horseshoeBay" } },
+            { "geometry": { "type": "Point", "coordinates": [-122.95736, 50.11632] },
+            "properties": { "id": "whistler" } },
+            { "geometry": { "type": "Point", "coordinates": [-120.02728, 51.64102] },
+            "properties": { "id": "clearwater" } },
+            { "geometry": { "type": "Point", "coordinates": [-118.07880, 52.882] },
+            "properties": { "id": "jasper" } },
+            { "geometry": { "type": "Point", "coordinates": [-115.57077, 51.17836] },
+            "properties": { "id": "banff" } },
+            { "geometry": { "type": "Point", "coordinates": [-114.05810, 51.04532] },
+            "properties": { "id": "calgary" } },
+            { "geometry": { "type": "Point", "coordinates": [-118.19439, 50.99867] },
+            "properties": { "id": "revelstoke" } },
+            { "geometry": { "type": "Point", "coordinates": [-119.49601, 49.88795] },
+            "properties": { "id": "kelowna" } },
+            { "geometry": { "type": "Point", "coordinates": [-119.45171, 49.02947] },
+            "properties": { "id": "osoyoos" } },
+            { "geometry": { "type": "Point", "coordinates": [-123.11442, 49.19168] },
+            "properties": { "id": "richmond" } }
+        ];
+
+        var tiles = mapbox.layer().tilejson({
+          tiles: [ "http://a.tiles.mapbox.com/v3/thenew.map-gdpgluqp/{z}/{x}/{y}.png" ]
+        });
+
+        var spots = mapbox.markers.layer()
+          .features(geojson)
+          .factory(function(f) {
+            var el = document.createElement('div');
+            el.className = 'spot spot-' + f.properties.id;
+            return el;
+          });
+
+        var map = mapbox.map('map', [tiles, spots], null, []);
+
+        var sections = document.getElementsByTagName('img');
+
+        var markers = _(sections).map(function(section) {
+          return _(spots.markers()).find(function(m) {
+            return m.data.properties.id === section.id;
+          });
+        });
+
+        // Helper to set the active section.
+        var setActive = function(index, ease) {
+          if (!ease) {
+            map.centerzoom(markers[index].location, markers[index].data.properties.zoom||8);
+          } else {
+            map.ease.location(markers[index].location).zoom(markers[index].data.properties.zoom||8).optimal(0.5, 1.00);
+          }
+          return true;
+        };
+
+
+        $(window).addEvent('scroll',function(e){
+            findTheStar($$('.photo'));
+        });
+
+
+        // Find the most focus element in the viewport
+
+        function findTheStar(els, callback) {
+            var theStar;
+
+            // étudions tous les elements
+            els.each(function(el, i){
+                sight = window.getScroll().y + window.getHeight();
+                heartPrey = el.getPosition().y + (el.getHeight()/1.2);
+                if(sight >= heartPrey && heartPrey > window.getScroll().y ) {
+                    theStar = i;
+                }
+
+            });
+            if(theStar) {
+                // console.log(theStar);
+                // var callbackFn = callback.bind(theStar);
+                setActive(theStar, true);
+            }
+        }
+
+        setActive(0, false);
+
+    </script>
 </body>
 </html>
