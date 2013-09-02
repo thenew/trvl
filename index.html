@@ -20,12 +20,28 @@
                     <div class="cf metas"><div class="caption">Vancouver, downtown</div></div>
                 </li>
                 <li class="item">
+                    <img class="photo" src="img/lynn_valley_01.jpg" id="lynn_valley" />
+                    <div class="cf metas"><div class="caption">Lynn Valley, suspension bridge</div></div>
+                </li>
+                <li class="item">
+                    <img class="photo" src="img/deep_cove_01.jpg" id="deep_cove" />
+                    <div class="cf metas"><div class="caption">Deep cove</div></div>
+                </li>
+                <li class="item">
+                    <img class="photo" src="img/whyte_islet_01.jpg" id="whyte_islet" />
+                    <div class="cf metas"><div class="caption">Whyte Islet</div></div>
+                </li>
+                <li class="item">
                     <img class="photo" src="img/victoria_01.jpg" id="victoria" />
                     <div class="cf metas"><div class="caption">Victoria</div></div>
                 </li>
                 <li class="item">
                     <img class="photo" src="img/tofino_01.jpg" id="tofino" />
                     <div class="cf metas"><div class="caption">Tofino, hydravion</div></div>
+                </li>
+                <li class="item">
+                    <img class="photo" src="img/clearwater_02.jpg" id="clearwater" />
+                    <div class="cf metas"><div class="caption">Clearwater, Helmcken Falls</div></div>
                 </li>
                 <li class="item">
                     <img class="photo" src="img/tofino_01.jpg" id="calgary" />
@@ -50,14 +66,19 @@
     <link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' rel='stylesheet' />
     <script src="mootools-1.4.5.js"></script>
     <script type="text/javascript">
-
         var geojson = [
             { "geometry": { "type": "Point", "coordinates": [-123.117655, 49.290504] },
-            "properties": { "id": "vancouver", "zoom": 8 } },
+            "properties": { "id": "vancouver", "zoom": 12 } },
             { "geometry": { "type": "Point", "coordinates": [-123.13878, 49.30520] },
-            "properties": { "id": "vancouverBeaverLake" } },
+            "properties": { "id": "vancouverBeaverLake", "zoom": 12 } },
+            { "geometry": { "type": "Point", "coordinates": [-123.01855,49.34347] },
+            "properties": { "id": "lynn_valley", "zoom": 12 } },
+            { "geometry": { "type": "Point", "coordinates": [-122.94965,49.32262] },
+            "properties": { "id": "deep_cove", "zoom": 12 } },
+            { "geometry": { "type": "Point", "coordinates": [-123.29225,49.36997] },
+            "properties": { "id": "whyte_islet", "zoom": 12 } },
             { "geometry": { "type": "Point", "coordinates": [-123.13288, 49.00659] },
-            "properties": { "id": "tsawwassen" } },
+            "properties": { "id": "tsawwassen", "zoom": 8 } },
             { "geometry": { "type": "Point", "coordinates": [-123.35449, 48.42373] },
             "properties": { "id": "victoria" } },
             { "geometry": { "type": "Point", "coordinates": [-125.90249, 49.15243] },
@@ -99,6 +120,15 @@
           });
 
         var map = mapbox.map('map', [tiles, spots], null, []);
+
+
+        // var markers = mapbox.markers.layer().url('map.geojson');
+        // mapbox.markers.interaction(markers);
+        // map.addLayer(markers);
+
+
+        // Add features to the map
+        // map.markerLayer.setGeoJSON(geoJson);
 
         var sections = document.getElementsByTagName('img');
 
@@ -146,6 +176,8 @@
         }
 
         setActive(0, false);
+
+
 
     </script>
 </body>
