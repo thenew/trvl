@@ -16,35 +16,35 @@
         <div class="photos">
             <ul id="geo-list" class="list photos-list">
                 <li class="item">
-                    <img class="photo" src="img/vancouver_01.jpg" id="vancouver" />
+                    <div class="photo" id="vancouver"><img src="img/vancouver_01.jpg" /></div>
                     <div class="cf metas"><div class="caption">Vancouver, downtown</div></div>
                 </li>
                 <li class="item">
-                    <img class="photo" src="img/lynn_valley_01.jpg" id="lynn_valley" />
+                    <div class="photo" id="lynn_valley"><img src="img/lynn_valley_01.jpg" /></div>
                     <div class="cf metas"><div class="caption">Lynn Valley, suspension bridge</div></div>
                 </li>
                 <li class="item">
-                    <img class="photo" src="img/deep_cove_01.jpg" id="deep_cove" />
+                    <div class="photo" id="deep_cove"><img src="img/deep_cove_01.jpg" /></div>
                     <div class="cf metas"><div class="caption">Deep cove</div></div>
                 </li>
                 <li class="item">
-                    <img class="photo" src="img/whyte_islet_01.jpg" id="whyte_islet" />
+                    <div class="photo" id="whyte_islet"><img src="img/whyte_islet_01.jpg" /></div>
                     <div class="cf metas"><div class="caption">Whyte Islet</div></div>
                 </li>
                 <li class="item">
-                    <img class="photo" src="img/victoria_01.jpg" id="victoria" />
+                    <div class="photo" id="victoria"><img src="img/victoria_01.jpg" /></div>
                     <div class="cf metas"><div class="caption">Victoria</div></div>
                 </li>
                 <li class="item">
-                    <img class="photo" src="img/tofino_01.jpg" id="tofino" />
+                    <div class="photo" id="tofino"><img src="img/tofino_01.jpg" /></div>
                     <div class="cf metas"><div class="caption">Tofino, hydravion</div></div>
                 </li>
                 <li class="item">
-                    <img class="photo" src="img/clearwater_02.jpg" id="clearwater" />
+                    <div class="photo" id="clearwater"><img src="img/clearwater_02.jpg" /></div>
                     <div class="cf metas"><div class="caption">Clearwater, Helmcken Falls</div></div>
                 </li>
                 <li class="item">
-                    <img class="photo" src="img/tofino_01.jpg" id="calgary" />
+                    <div class="photo" id="calgary"><img src="img/tofino_01.jpg" /></div>
                     <div class="cf metas"><div class="caption">Tofino, hydravion</div></div>
                 </li>
 
@@ -130,7 +130,7 @@
         // Add features to the map
         // map.markerLayer.setGeoJSON(geoJson);
 
-        var sections = document.getElementsByTagName('img');
+        var sections = $$('.photo');
 
         var markers = _(sections).map(function(section) {
           return _(spots.markers()).find(function(m) {
@@ -150,7 +150,7 @@
 
 
         $(window).addEvent('scroll',function(e){
-            findTheStar($$('.photo'));
+            findTheStar($$('.item'));
         });
 
 
@@ -158,13 +158,16 @@
 
         function findTheStar(els, callback) {
             var theStar;
+            els.removeClass('active');
 
             // étudions tous les elements
             els.each(function(el, i){
+                // var el = item.getElements('.photo')[0];
                 sight = window.getScroll().y + window.getHeight();
                 heartPrey = el.getPosition().y + (el.getHeight()/1.2);
                 if(sight >= heartPrey && heartPrey > window.getScroll().y ) {
                     theStar = i;
+                    el.addClass('active');
                 }
 
             });

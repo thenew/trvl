@@ -45,16 +45,47 @@ a {
     left: 0;
 }
 
+.photos-list .item {
+    text-align: center;
+}
+
+.photos-list .item .photo {
+    display: inline-block;
+    background-color: #333;
+}
+
+.photos-list .item .photo img {
+    max-height: 800px;
+    opacity: 0.5;
+    -webkit-transition: opacity .2s ease-in-out;
+    -moz-transition: opacity .2s ease-in-out;
+    -o-transition: opacity .2s ease-in-out;
+    transition: opacity .2s ease-in-out;
+}
+
+.photos-list .item.active .photo img {
+    opacity: 1;
+}
+
 .photos {
     position: absolute;
     top: 0;
-    left: 5%;
+    left: 0;
     /*right: 25%;*/
-    margin: 0 25% 0 5%;
+    margin: 0 3% 0 0;
     /*bottom: 0;*/
     /*height: 100%;*/
+    /*background-color: rgba(0,0,0,.3);*/
+    /*background-color: rgba(0,0,0,.1);*/
+    background-repeat: repeat-y;
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,.6) 80%,rgba(0,0,0,0) 100%);
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,.6) 80%,rgba(0,0,0,0) 100%);
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,.6) 80%,rgba(0,0,0,0) 100%);
+    background-image:         linear-gradient(left, rgba(0,0,0,.6) 80%,rgba(0,0,0,0) 100%);
+}
+
+.photos-list {
     padding: 10px;
-    background-color: rgba(0,0,0,.3);
 }
 
 .photos-list .item {
@@ -67,13 +98,13 @@ a {
 }
 
 .photos-list .caption {
-    float: right;
+    float: left;
     max-width: 60%;
     font-family: 'Georgia', serif;
     font-size: 14px;
     line-height: 1.2;
     color: #ddd;
     padding: 5px 0;
-    text-align: right;
+    text-align: left;
     font-style: italic;
 }
