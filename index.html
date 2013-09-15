@@ -14,6 +14,8 @@
         </div>
 
         <div class="photos">
+            <h1 class="page-title">Western Canada</h1>
+            <p class="page-description">A 22 days road trip through British Columbia and Alberta during summer 2013</p>
             <ul id="geo-list" class="list photos-list">
                 <li class="item active">
                     <div class="photo" id="vancouver"><img src="img/vancouver_01.jpg" /></div>
@@ -28,8 +30,20 @@
                     <div class="cf metas"><div class="caption">Deep cove</div></div>
                 </li>
                 <li class="item">
+                    <div class="photo" id="vancouverNorth"><img src="img/vancouver_02.jpg" /></div>
+                    <div class="cf metas"><div class="caption">Vancouver</div></div>
+                </li>
+                <li class="item">
                     <div class="photo" id="whyte_islet"><img src="img/whyte_islet_01.jpg" /></div>
                     <div class="cf metas"><div class="caption">Whyte Islet</div></div>
+                </li>
+                <li class="item">
+                    <div class="photo" id="vancouverBeaverLake"><img src="img/vancouver_03.jpg" /></div>
+                    <div class="cf metas"><div class="caption">Beaver Lake, Vancouver</div></div>
+                </li>
+                <li class="item">
+                    <div class="photo" id="vancouverBeach"><img src="img/vancouver_04.jpg" /></div>
+                    <div class="cf metas"><div class="caption">Celebration of Light, Vancouver</div></div>
                 </li>
                 <li class="item">
                     <div class="photo" id="victoria"><img src="img/victoria_01.jpg" /></div>
@@ -37,19 +51,51 @@
                 </li>
                 <li class="item">
                     <div class="photo" id="tofino"><img src="img/tofino_01.jpg" /></div>
-                    <div class="cf metas"><div class="caption">Tofino, hydravion</div></div>
+                    <div class="cf metas"><div class="caption">Tofino from a seaplane</div></div>
+                </li>
+                <li class="item squared-item">
+                    <div class="photo" id="whistler"><img src="img/whistler_01.jpg" /></div>
+                    <div class="cf metas"><div class="caption">Average breakfast, Whistler</div></div>
                 </li>
                 <li class="item">
-                    <div class="photo" id="clearwater"><img src="img/clearwater_01.jpg" /></div>
-                    <div class="cf metas"><div class="caption">Sur la route de Clearwater</div></div>
+                    <div class="photo" id="beforeClearwater"><img src="img/clearwater_01.jpg" /></div>
+                    <div class="cf metas"><div class="caption">In middle of nowhere</div></div>
                 </li>
                 <li class="item">
                     <div class="photo" id="clearwater"><img src="img/clearwater_02.jpg" /></div>
-                    <div class="cf metas"><div class="caption">Clearwater, Helmcken Falls</div></div>
+                    <div class="cf metas"><div class="caption">Helmcken Falls, Clearwater</div></div>
+                </li>
+                <li class="item squared-item">
+                    <div class="photo" id="athabascaFalls"><img src="img/athabasca_falls_01.jpg" /></div>
+                    <div class="cf metas"><div class="caption">Athabasca Falls</div></div>
                 </li>
                 <li class="item">
-                    <div class="photo" id="calgary"><img src="img/tofino_01.jpg" /></div>
-                    <div class="cf metas"><div class="caption">Tofino, hydravion</div></div>
+                    <div class="photo" id="columbiaIceField"><img src="img/ice_field_01.jpg" /></div>
+                    <div class="cf metas"><div class="caption">Columbia Icefield</div></div>
+                </li>
+                <li class="item">
+                    <div class="photo" id="calgary"><img src="img/calgary_01.jpg" /></div>
+                    <div class="cf metas"><div class="caption">Calgary</div></div>
+                </li>
+                <li class="item">
+                    <div class="photo" id="lakeLouise"><img src="img/lake_louise_01.jpg" /></div>
+                    <div class="cf metas"><div class="caption">Lake Louise</div></div>
+                </li>
+                <li class="item">
+                    <div class="photo" id="takakkawFalls"><img src="img/takakkaw_falls_01.jpg" /></div>
+                    <div class="cf metas"><div class="caption">A spermophilus, Takakkaw Falls</div></div>
+                </li>
+                <li class="item">
+                    <div class="photo" id="osoyoos"><img src="img/osoyoos_01.jpg" /></div>
+                    <div class="cf metas"><div class="caption">Osoyoos</div></div>
+                </li>
+                <li class="item">
+                    <div class="photo" id="vancouverGranville"><img src="img/vancouver_05.jpg" /></div>
+                    <div class="cf metas"><div class="caption">Vancouver Downtown from Granville Island</div></div>
+                </li>
+                <li class="item">
+                    <div class="photo" id="vancouverGeese"><img src="img/vancouver_06.jpg" /></div>
+                    <div class="cf metas"><div class="caption">Geese everywhere, Vancouver</div></div>
                 </li>
             </ul>
         </div>
@@ -57,14 +103,19 @@
 
     <script src='http://underscorejs.org/underscore-min.js'></script>
     <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js'></script>
-    <link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' rel='stylesheet' />
+    <!-- <link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' rel='stylesheet' /> -->
     <script src="mootools-1.4.5.js"></script>
+    <script src="mootools-more-1.4.0.1.js"></script>
     <script type="text/javascript">
         var geojson = [
             { "geometry": { "type": "Point", "coordinates": [-123.117655, 49.290504] }, "properties": { "id": "vancouver", "zoom": 12 } },
             { "geometry": { "type": "Point", "coordinates": [-123.13878, 49.30520] }, "properties": { "id": "vancouverBeaverLake", "zoom": 12 } },
+            { "geometry": { "type": "Point", "coordinates": [-123.14352,49.28612] }, "properties": { "id": "vancouverBeach", "zoom": 12 } },
+            { "geometry": { "type": "Point", "coordinates": [-123.13540,49.27312] }, "properties": { "id": "vancouverGranville", "zoom": 12 } },
+            { "geometry": { "type": "Point", "coordinates": [-123.13499,49.26905] }, "properties": { "id": "vancouverGeese", "zoom": 12 } },
             { "geometry": { "type": "Point", "coordinates": [-123.01855,49.34347] }, "properties": { "id": "lynn_valley", "zoom": 12 } },
             { "geometry": { "type": "Point", "coordinates": [-122.94965,49.32262] }, "properties": { "id": "deep_cove", "zoom": 12 } },
+            { "geometry": { "type": "Point", "coordinates": [-123.18798,49.36263] }, "properties": { "id": "vancouverNorth", "zoom": 12 } },
             { "geometry": { "type": "Point", "coordinates": [-123.29225,49.36997] }, "properties": { "id": "whyte_islet", "zoom": 12 } },
             { "geometry": { "type": "Point", "coordinates": [-123.13288, 49.00659] }, "properties": { "id": "tsawwassen", "zoom": 8 } },
             { "geometry": { "type": "Point", "coordinates": [-123.35449, 48.42373] }, "properties": { "id": "victoria" } },
@@ -72,11 +123,13 @@
             { "geometry": { "type": "Point", "coordinates": [-123.93497, 49.16664] }, "properties": { "id": "nanaimo" } },
             { "geometry": { "type": "Point", "coordinates": [-123.27160, 49.37579] }, "properties": { "id": "horseshoeBay" } },
             { "geometry": { "type": "Point", "coordinates": [-122.95736, 50.11632] }, "properties": { "id": "whistler" } },
+            { "geometry": { "type": "Point", "coordinates": [-120.02728, 51.64102] }, "properties": { "id": "beforeClearwater" } },
             { "geometry": { "type": "Point", "coordinates": [-120.02728, 51.64102] }, "properties": { "id": "clearwater" } },
             { "geometry": { "type": "Point", "coordinates": [-118.07880, 52.882] }, "properties": { "id": "jasper" } },
-            { "geometry": { "type": "Point", "coordinates": [-117.313859,52.15603] }, "properties": { "id": "columbiaIceField" } },
             { "geometry": { "type": "Point", "coordinates": [-117.88361,52.66417] }, "properties": { "id": "athabascaFalls" } },
+            { "geometry": { "type": "Point", "coordinates": [-117.313859,52.15603] }, "properties": { "id": "columbiaIceField" } },
             { "geometry": { "type": "Point", "coordinates": [-115.57077, 51.17836] }, "properties": { "id": "banff" } },
+            { "geometry": { "type": "Point", "coordinates": [-115.57077, 51.17836] }, "properties": { "id": "lakeLouise" } },
             { "geometry": { "type": "Point", "coordinates": [-114.05810, 51.04532] }, "properties": { "id": "calgary" } },
             { "geometry": { "type": "Point", "coordinates": [-116.47413,51.50006] }, "properties": { "id": "takakkawFalls" } },
             { "geometry": { "type": "Point", "coordinates": [-118.19439, 50.99867] }, "properties": { "id": "revelstoke" } },
@@ -101,7 +154,7 @@
 
         var sections = $$('.photo');
 
-        var markers = _(sections).map(function(section) {
+        var markers = sections.map(function(section) {
           return _(spots.markers()).find(function(m) {
             return m.data.properties.id === section.id;
           });
@@ -117,9 +170,62 @@
           return true;
         };
 
-        $(window).addEvent('scroll',function(e){
-            findTheStar($$('.item'));
+
+        window.addEvent('domready', function(j) {
+
+            var listenKeydown = false;
+
+            $(window).addEvent('scroll',function(e){
+                console.log(listenKeydown);
+                if(!listenKeydown) {
+                    findTheStar($$('.item'));
+                }
+            });
+
+            // Listen keyboard
+            $(window).addEvent('keydown',function(e){
+                if( listenKeydown || (e.key != 'down' && e.key != 'right' && e.key != 'up' && e.key != 'left') ) return;
+                listenKeydown = true;
+                e.preventDefault();
+                var theStar = false;
+                if($$('.photos-list .item.active').length) {
+                    var theStar = $$('.item.active')[0];
+                    if(e.key == 'down' || e.key == 'right') {
+                        var thenewStar = theStar.getNext('.item');
+                    }
+                    if(e.key == 'up' || e.key == 'left') {
+                        var thenewStar = theStar.getPrevious('.item');
+                    }
+                    if(!thenewStar) thenewStar = theStar;
+
+                    // move map
+                    setActive($$('.photos-list .item').indexOf(thenewStar), true);
+
+                    new Fx.Scroll(window, {
+                            offset: {
+                                y: -20
+                            },
+                            duration: 700
+                    }).toElement(thenewStar);
+                    theStar.removeClass('active')
+                    thenewStar.addClass('active');
+                } else {
+                    var thenewStar = $$('.photos-list .item')[0];
+                    new Fx.Scroll(window, {
+                            offset: {
+                                y: -20
+                            },
+                            duration: 700
+                    }).toElement(thenewStar);
+                    thenewStar.addClass('active');
+                }
+                setTimeout(function() {
+                    listenKeydown = false;
+                }, 800);
+            });
+
         });
+
 
         // Find the most focus element in the viewport
         function findTheStar(els, callback) {
@@ -128,7 +234,7 @@
 
             els.each(function(el, i){
                 sight = window.getScroll().y + window.getHeight();
-                heartPrey = el.getPosition().y + (el.getHeight()/4);
+                heartPrey = el.getPosition().y + (el.getHeight()/2);
                 if(sight >= heartPrey && heartPrey > window.getScroll().y ) {
                     theStar = i;
                     el.addClass('active');

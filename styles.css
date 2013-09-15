@@ -46,6 +46,37 @@ a {
     left: 0;
 }
 
+
+.page-title {
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 48px;
+    line-height: 1.1;
+    /*color: #ddd;*/
+    padding: 22px 0 5px 40px;
+
+    color: #333;
+   /*-webkit-text-stroke: .8px rgba(200,200,200,.5);*/
+   text-shadow: 0 0 1px rgba(200,200,200,.9), 0 0 2px rgba(200,200,200,.4);
+   /*text-shadow:
+       3px 3px 0 rgba(200,200,200,.5),
+     -1px -1px 0 rgba(200,200,200,.5),
+      1px -1px 0 rgba(200,200,200,.5),
+      -1px 1px 0 rgba(200,200,200,.5),
+       1px 1px 0 rgba(200,200,200,.5);*/
+}
+
+.page-description {
+    padding: 0 0 32px 40px;
+    font-family: 'Georgia', serif;
+    font-size: 14px;
+    line-height: 1.1;
+    font-style: italic;
+    color: #ddd;
+    letter-spacing: 1px;
+}
+
 .photos-list .item {
     text-align: center;
 }
@@ -79,10 +110,10 @@ a {
     /*background-color: rgba(0,0,0,.3);*/
     /*background-color: rgba(0,0,0,.1);*/
     background-repeat: repeat-y;
-    background-image: -webkit-linear-gradient(left, rgba(50,50,50,.95) 30%,rgba(50,50,50,0) 98%);
-    background-image:    -moz-linear-gradient(left, rgba(50,50,50,.95) 30%,rgba(50,50,50,0) 98%);
-    background-image:      -o-linear-gradient(left, rgba(50,50,50,.95) 30%,rgba(50,50,50,0) 98%);
-    background-image:         linear-gradient(left, rgba(50,50,50,.95) 30%,rgba(50,50,50,0) 98%);
+    background-image: -webkit-linear-gradient(left, rgba(50,50,50,.95) 40%,rgba(50,50,50,0) 98%);
+    background-image:    -moz-linear-gradient(left, rgba(50,50,50,.95) 40%,rgba(50,50,50,0) 98%);
+    background-image:      -o-linear-gradient(left, rgba(50,50,50,.95) 40%,rgba(50,50,50,0) 98%);
+    background-image:         linear-gradient(left, rgba(50,50,50,.95) 40%,rgba(50,50,50,0) 98%);
 }
 
 .photos-list {
@@ -96,6 +127,11 @@ a {
 .photo {
     text-align: center;
     max-width: 100%;
+}
+
+.squared-item .photo,
+.squared-item .caption {
+    margin: 0 100px;
 }
 
 .photo img {
