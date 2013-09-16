@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>✈ Travel</title>
 <link rel="icon" href="/favicon.png">
-<link rel="stylesheet" href="base.css">
+<link rel="stylesheet" href="../base.css">
 <link rel="stylesheet" href="styles.css">
 <body>
 
@@ -97,6 +97,9 @@
                     <div class="photo" id="vancouverGeese"><img src="img/vancouver_06.jpg" /></div>
                     <div class="cf metas"><div class="caption">Geese everywhere, Vancouver</div></div>
                 </li>
+                <li class="item">
+                    <div class="photo" id="panorama"></div>
+                </li>
             </ul>
         </div>
     </div>
@@ -104,8 +107,8 @@
     <script src='http://underscorejs.org/underscore-min.js'></script>
     <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js'></script>
     <!-- <link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' rel='stylesheet' /> -->
-    <script src="mootools-1.4.5.js"></script>
-    <script src="mootools-more-1.4.0.1.js"></script>
+    <script src="../mootools-1.4.5.js"></script>
+    <script src="../mootools-more-1.4.0.1.js"></script>
     <script type="text/javascript">
         var geojson = [
             { "geometry": { "type": "Point", "coordinates": [-123.117655, 49.290504] }, "properties": { "id": "vancouver", "zoom": 12 } },
@@ -135,7 +138,8 @@
             { "geometry": { "type": "Point", "coordinates": [-118.19439, 50.99867] }, "properties": { "id": "revelstoke" } },
             { "geometry": { "type": "Point", "coordinates": [-119.49601, 49.88795] }, "properties": { "id": "kelowna" } },
             { "geometry": { "type": "Point", "coordinates": [-119.45171, 49.02947] }, "properties": { "id": "osoyoos" } },
-            { "geometry": { "type": "Point", "coordinates": [-123.11442, 49.19168] }, "properties": { "id": "richmond" } }
+            { "geometry": { "type": "Point", "coordinates": [-123.11442, 49.19168] }, "properties": { "id": "richmond" } },
+            { "geometry": { "type": "Point", "coordinates": [-118.19439, 50.99867] }, "properties": { "id": "panorama", "zoom": 6 } }
         ];
 
         var tiles = mapbox.layer().tilejson({
