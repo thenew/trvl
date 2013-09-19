@@ -99,6 +99,10 @@ a {
     opacity: 1;
 }
 
+.photos-list .item.panorama {
+    height: 500px;
+}
+
 .photos {
     position: absolute;
     top: 0;
