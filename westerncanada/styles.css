@@ -105,6 +105,32 @@ a {
     background-image: linear-gradient(120deg,rgba(10,10,10,.95) 0,rgba(10,10,10,.8) 50%,rgba(10,10,10,0) 80%);
 }
 
+/*Mediaqueries*/
+
+/*@media screen and (min-width: 800px) {
+    .photos {
+        padding-right: 100px;
+    }
+}*/
+
+@media screen and (max-width: 1100px) {
+    .photos {
+        padding-right: 240px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .photos {
+        padding-right: 100px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .photos {
+        padding-right: 20px;
+    }
+}
+
 .photos-list {
     padding: 20px 20px 20px 40px;
 }
