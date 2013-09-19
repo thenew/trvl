@@ -1,0 +1,196 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Point",
+                 "coordinates": [-123.117655, 49.290504]
+            },
+            "properties": { "id": "vancouver", "zoom": 12 }
+        },
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Point",
+                 "coordinates": [-123.01855,49.34347]
+            },
+            "properties": { "id": "lynn_valley", "zoom": 12 }
+        },
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Point",
+                 "coordinates": [-122.94965,49.32262]
+            },
+            "properties": { "id": "deep_cove", "zoom": 12 }
+        },
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Point",
+                 "coordinates": [-123.18798,49.36263]
+            },
+            "properties": { "id": "vancouverNorth", "zoom": 12 }
+        },
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Point",
+                 "coordinates": [-123.29225,49.36997]
+            },
+            "properties": { "id": "whyte_islet", "zoom": 12 }
+        },
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Point",
+                 "coordinates": [-123.13878, 49.30520]
+            },
+            "properties": { "id": "vancouverBeaverLake", "zoom": 12 }
+        },
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Point",
+                 "coordinates": [-123.14352,49.28612]
+            },
+            "properties": { "id": "vancouverBeach", "zoom": 12 }
+        },
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Point",
+                 "coordinates": [-123.35449, 48.42373]
+            },
+            "properties": { "id": "victoria" }
+        },
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Point",
+                 "coordinates": [-125.90249, 49.15243]
+            },
+            "properties": { "id": "tofino" }
+        },
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Point",
+                 "coordinates": [-122.95736, 50.11632]
+            },
+            "properties": { "id": "whistler" }
+        },
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Point",
+                 "coordinates": [-122.50537,50.36769]
+            },
+            "properties": { "id": "beforeClearwater" }
+        },
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Point",
+                 "coordinates": [-120.02728, 51.64102]
+            },
+            "properties": { "id": "clearwater" }
+        },
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Point",
+                 "coordinates": [-117.88361,52.66417]
+            },
+            "properties": { "id": "athabascaFalls" }
+        },
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Point",
+                 "coordinates": [-117.313859,52.15603]
+            },
+            "properties": { "id": "columbiaIceField" }
+        },
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Point",
+                 "coordinates": [-114.05810, 51.04532]
+            },
+            "properties": { "id": "calgary" }
+        },
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Point",
+                 "coordinates": [-115.57077, 51.17836]
+            },
+            "properties": { "id": "lakeLouise" }
+        },
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Point",
+                 "coordinates": [-116.47413,51.50006]
+            },
+            "properties": { "id": "takakkawFalls" }
+        },
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Point",
+                 "coordinates": [-119.45171, 49.02947]
+            },
+            "properties": { "id": "osoyoos" }
+        },
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Point",
+                 "coordinates": [-123.13540,49.27312]
+            },
+            "properties": { "id": "vancouverGranville", "zoom": 12 }
+        },
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Point",
+                 "coordinates": [-123.13499,49.26905]
+            },
+            "properties": { "id": "vancouverGeese", "zoom": 12 }
+        },
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Point",
+                 "coordinates": [-118.19439, 50.99867]
+            },
+            "properties": { "id": "panorama", "zoom": 6 }
+        }
+
+    ]
+}

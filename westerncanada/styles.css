@@ -104,7 +104,7 @@ a {
     top: 0;
     left: 0;
     /*right: 25%;*/
-    padding: 0 400px 0 0;
+    padding: 0 360px 0 0;
     /*bottom: 0;*/
     /*height: 100%;*/
     /*background-color: rgba(0,0,0,.3);*/
@@ -114,6 +114,32 @@ a {
     background-image:    -moz-linear-gradient(left, rgba(50,50,50,.95) 40%,rgba(50,50,50,0) 98%);
     background-image:      -o-linear-gradient(left, rgba(50,50,50,.95) 40%,rgba(50,50,50,0) 98%);
     background-image:         linear-gradient(left, rgba(50,50,50,.95) 40%,rgba(50,50,50,0) 98%);
+}
+
+/*Mediaqueries*/
+
+/*@media screen and (min-width: 800px) {
+    .photos {
+        padding-right: 100px;
+    }
+}*/
+
+@media screen and (max-width: 1100px) {
+    .photos {
+        padding-right: 240px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .photos {
+        padding-right: 100px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .photos {
+        padding-right: 20px;
+    }
 }
 
 .photos-list {
