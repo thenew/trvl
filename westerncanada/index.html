@@ -169,16 +169,25 @@
           return true;
         };
 
+        var photosBg = $$('.photos-bg')[0];
 
         window.addEvent('domready', function(j) {
 
             var listenKeydown = false;
 
             $(window).addEvent('scroll',function(e){
-                console.log(listenKeydown);
                 if(!listenKeydown) {
                     findTheStar($$('.item'));
                 }
+                // Listen keyboard
+                var sight = window.getScroll().y + window.getHeight();
+                var prey = $('panorama').getPosition().y;
+                if(prey < sight) {
+                    photosBg.addClass('is-panorama');
+                } else {
+                    photosBg.removeClass('is-panorama');
+                }
+
             });
 
             // Listen keyboard
