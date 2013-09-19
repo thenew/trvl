@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
 body {
+    height: 100%;
+    color: #eee;
     background-color: #999;
     background-color: rgb(50,50,50);
-    color: #eee;
-    height: 100%;
 }
 
 a {
@@ -22,20 +22,14 @@ a {
     overflow: hidden;
 }
 
-
-
 .map-container {
-    /*width: 80%;*/
-    /*min-width: 500px;*/
-    /*height: 80%;*/
-    width: 175vw;
-    height: 100vh;
-    /*min-height: 400px;*/
     position: fixed;
     top: 0;
     right: -60%;
     bottom: -30%;
     left: 0;
+    width: 175vw;
+    height: 100vh;
 }
 
 .map {
@@ -46,35 +40,25 @@ a {
     left: 0;
 }
 
-
 .page-title {
-    font-family: 'Georgia', serif;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 48px;
-    line-height: 1.1;
-    /*color: #ddd;*/
     padding: 22px 0 5px 40px;
-
-    color: #333;
-   /*-webkit-text-stroke: .8px rgba(200,200,200,.5);*/
-   text-shadow: 0 0 1px rgba(200,200,200,.9), 0 0 2px rgba(200,200,200,.4);
-   /*text-shadow:
-       3px 3px 0 rgba(200,200,200,.5),
-     -1px -1px 0 rgba(200,200,200,.5),
-      1px -1px 0 rgba(200,200,200,.5),
-      -1px 1px 0 rgba(200,200,200,.5),
-       1px 1px 0 rgba(200,200,200,.5);*/
+    text-shadow: 0 0 1px rgba(240,240,240,.99) ,0 0 2px rgba(240,240,240,.4);
+    font-family: 'Georgia',serif;
+    font-size: 48px;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 1.1;
+    color: #111;
 }
 
 .page-description {
     padding: 0 0 32px 40px;
-    font-family: 'Georgia', serif;
+    font-family: 'Georgia',serif;
     font-size: 14px;
-    line-height: 1.1;
     font-style: italic;
-    color: #ddd;
+    line-height: 1.1;
     letter-spacing: 1px;
+    color: #ddd;
 }
 
 .photos-list .item {
@@ -104,20 +88,21 @@ a {
 }
 
 .photos {
+    z-index: 2;
     position: absolute;
     top: 0;
     left: 0;
-    /*right: 25%;*/
     padding: 0 400px 0 0;
-    /*bottom: 0;*/
-    /*height: 100%;*/
-    /*background-color: rgba(0,0,0,.3);*/
-    /*background-color: rgba(0,0,0,.1);*/
-    background-repeat: repeat-y;
-    background-image: -webkit-linear-gradient(left, rgba(50,50,50,.95) 40%,rgba(50,50,50,0) 98%);
-    background-image:    -moz-linear-gradient(left, rgba(50,50,50,.95) 40%,rgba(50,50,50,0) 98%);
-    background-image:      -o-linear-gradient(left, rgba(50,50,50,.95) 40%,rgba(50,50,50,0) 98%);
-    background-image:         linear-gradient(left, rgba(50,50,50,.95) 40%,rgba(50,50,50,0) 98%);
+}
+
+.photos-bg {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(120deg,rgba(10,10,10,.95) 0,rgba(10,10,10,.8) 50%,rgba(10,10,10,0) 80%);
 }
 
 .photos-list {
@@ -129,8 +114,8 @@ a {
 }
 
 .photo {
-    text-align: center;
     max-width: 100%;
+    text-align: center;
 }
 
 .squared-item .photo,
@@ -144,13 +129,37 @@ a {
 
 .photos-list .caption {
     float: left;
+    margin-top: 15px;
     max-width: 60%;
-    font-family: 'Georgia', serif;
+    text-align: left;
+    font-family: 'Georgia',serif;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    color: #ddd;
+}
+
+footer {
+    margin-bottom: 20px;
+    font-family: 'Verdana',sans-serif;
     font-size: 14px;
     line-height: 1.2;
-    color: #ddd;
+}
+
+footer a {
     letter-spacing: 1px;
-    margin-top: 15px;
-    text-align: left;
-    font-style: italic;
+    color: #ffe330;
+    border-top: 0px solid #111;
+    border-bottom: 0px solid #111;
+    -webkit-transition: border .2s ease-in-out;
+    -moz-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+}
+
+footer a:hover {
+    border-top: 2px solid #111;
+    border-bottom: 2px solid #111;
+    color: #ffe330;
 }

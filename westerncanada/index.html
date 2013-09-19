@@ -13,6 +13,7 @@
             <div id="map" class="map"></div>
         </div>
 
+        <div class="photos-bg"></div>
         <div class="photos">
             <h1 class="page-title">Western Canada</h1>
             <p class="page-description">A 22 days road trip through British Columbia and Alberta during summer 2013</p>
@@ -99,6 +100,9 @@
                 </li>
                 <li class="item panorama">
                     <div class="photo" id="panorama"></div>
+                </li>
+                <li>
+                    <footer><a href="http://thenew.fr">thenew</a> &mdash; Thanks to my road mates.</footer>
                 </li>
             </ul>
         </div>
@@ -209,7 +213,7 @@
                             offset: {
                                 y: -20
                             },
-                            duration: 700
+                            duration: 500
                     }).toElement(thenewStar);
                     theStar.removeClass('active')
                     thenewStar.addClass('active');
@@ -219,7 +223,7 @@
                             offset: {
                                 y: -20
                             },
-                            duration: 700
+                            duration: 500
                     }).toElement(thenewStar);
                     thenewStar.addClass('active');
                 }
