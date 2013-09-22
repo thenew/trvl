@@ -153,6 +153,13 @@ a {
     margin: 0 100px;
 }
 
+@media screen and (max-width: 600px) {
+    .squared-item .photo,
+    .squared-item .caption {
+        margin: 0;
+    }
+}
+
 .photo img {
     box-shadow: 0 0 10px rgba(50,50,50,.6);
 }
@@ -182,7 +189,7 @@ footer {
 footer a {
     letter-spacing: 1px;
     color: #ffe330;
-    text-shadow: 0 0 3px #111;
+    text-shadow: -1px 1px 1px rgba(0,0,0,0.6);
     border-top: 0px solid rgba(0,0,0,.8);
     border-bottom: 0px solid rgba(0,0,0,.8);
     -webkit-transition: border .2s ease-in-out;
