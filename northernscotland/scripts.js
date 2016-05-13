@@ -8,11 +8,11 @@ var $window,
 $(document).on('ready', function(){
     $window = $(window);
 
-    count = 20;
+    count = 18;
     images = $('.images');
     overlay = $('.overlay');
 
-    for (var i = 2; i <= count; i++) {
+    for (var i = 3; i <= count; i++) {
         images.append( '<div class="image fade"><img src="images/photo ('+i+').jpg"></div>' );
     }
 
@@ -24,6 +24,13 @@ $(document).on('ready', function(){
 
     $window.on("scroll resize", check_if_in_view);
     check_if_in_view();
+
+
+    // scroll to between 1 and 2
+    setTimeout(function() {
+        $window.scrollTop( (partHeight/2) + 1 );
+    }, 100);
+
 });
 
 
